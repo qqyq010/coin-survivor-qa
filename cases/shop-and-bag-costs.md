@@ -21,4 +21,4 @@ Coin Survivor에서는 골드가 구매 재화이면서 생존과 성장에도 �
 - 상점 진입 후 남겨둘 최소 골드: 40
 - 누적 획득 골드에 따른 진행도와 현재 보유 골드를 구분
 
-[밸런스 조정안 v5](../balance/project2-balance-v5-ko.xlsx)와 [상점 진입 판단 코드](../code/shop-entry.cs.txt)를 함께 첨부했습니다.
+[밸런스 조정안](../balance/coin-survivor-balance.xlsx)와 [상점 진입 판단 코드](../code/shop-entry-costs.cs)를 함께 첨부했습니다.
