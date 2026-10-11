@@ -28,6 +28,7 @@ Unity와 C#을 사용했습니다. 평소 즐기던 게임을 참고해 아이�
 
 ## 자료 보기
 
+- [전체 파일 안내](FILES.md): 사례·코드·시트·이미지의 내용과 연결 관계
 - [대표 이슈 보고서](cases/04-weapon-sale.md)
 - [수정 후 확인 기록](evidence/weapon-sale-checks.md)
 - [관련 코드 발췌](code/README.md)
