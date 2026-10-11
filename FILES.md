@@ -1,40 +1,40 @@
 # 파일 안내
 
-무기 판매 문제는 **이슈 보고서 → 당시 확인표 → 판매 처리 코드** 순서로 읽으면 수정 내용과 확인 결과를 함께 볼 수 있습니다. 구매·확장 비용은 경제 사례와 밸런스 시트를 연결해 정리했습니다.
+무기 판매 사례는 **[문제와 수정](cases/sold-weapon-keeps-attacking.md) → [테스트 기록](playtest/weapon-sale-test-results.md) → [코드](code/weapon-sale.cs)** 순서로 볼 수 있습니다.
 
-## 소개와 자료 안내
+## 소개
 
-| 파일 | 내용 |
+| 문서 | 내용 |
 |---|---|
-| [프로젝트 소개](README.md) | 담당 업무, 대표 QA 사례, 출시 정보 |
-| [코드 안내](code/README.md) | 세 가지 코드 발췌의 역할과 출처 |
-| [밸런스 시트 안내](balance/README.md) | Excel 파일에 담긴 12개 시트의 내용 |
+| [프로젝트 소개](README.md) | 맡은 일과 대표 사례 |
+| [코드 안내](code/README.md) | 원본 클래스와 발췌한 부분 |
+| [밸런스 시트 안내](balance/README.md) | 12개 탭의 내용과 입력 방법 |
 
-## 사례와 확인 기록
+## 사례와 테스트
 
-| 파일 | 내용 | 함께 볼 자료 |
+| 문서 | 내용 | 함께 볼 자료 |
 |---|---|---|
-| [판매한 무기가 계속 공격하는 문제](cases/sold-weapon-keeps-attacking.md) | 발생 조건, 기대·실제 결과, 수정 과정 | [당시 확인표](playtest/weapon-sale-test-results.md), [판매 처리 코드](code/weapon-sale.cs) |
-| [무기 판매 확인표](playtest/weapon-sale-test-results.md) | 레벨 구분, 확정·취소, 구매·합성의 당시 확인 결과 | [대표 이슈 보고서](cases/sold-weapon-keeps-attacking.md) |
-| [자석 획득 효과](cases/magnet-pickup-range.md) | 획득 범위의 차이를 느끼기 어려웠던 상황과 수정 후 플레이 결과 | [획득 반경 계산](code/magnet-pickup-range.cs) |
-| [한글 표시](cases/korean-text-display.md) | 업그레이드 제목·설명이 네모로 보이던 문제와 표시 확인 | 보조 UI 사례 |
-| [구매와 가방 확장 비용](cases/shop-and-bag-costs.md) | 114골드에서 구매·확장을 함께 하기 어려웠던 상황과 조정안 | [밸런스 시트](balance/coin-survivor-balance.xlsx), [상점 진입 코드](code/shop-entry-costs.cs) |
-| [진화 무기 조정](cases/evolved-weapon-balance.md) | 공격 반경과 분열 단계 제한, 이펙트 표시 조정 | [조정 전 플레이 화면](playtest/evolved-weapons-before-adjustment.jpg) |
+| [무기 판매 버그](cases/sold-weapon-keeps-attacking.md) | 가방에서 사라진 무기가 계속 공격한 문제 | [테스트 기록](playtest/weapon-sale-test-results.md) · [코드](code/weapon-sale.cs) |
+| [무기 판매 테스트](playtest/weapon-sale-test-results.md) | 판매·구매·합성을 직접 확인한 결과 | [버그 사례](cases/sold-weapon-keeps-attacking.md) |
+| [자석 효과](cases/magnet-pickup-range.md) | 획득 범위 차이가 작았던 문제와 재플레이 결과 | [반경 계산](code/magnet-pickup-range.cs) |
+| [한글 깨짐](cases/korean-text-display.md) | 업그레이드 제목·설명 표시 수정 | 보조 UI 사례 |
+| [구매·확장 비용](cases/shop-and-bag-costs.md) | 아이템 구매 후 확장비가 부족했던 상황과 조정안 | [밸런스 시트](balance/coin-survivor-balance.xlsx) · [진입 조건](code/shop-entry-costs.cs) |
+| [진화 무기 조정](cases/evolved-weapon-balance.md) | 공격 반경·분열 단계·이펙트 조정 | [조정 전 화면](playtest/evolved-weapons-before-adjustment.jpg) |
 
-## 코드와 밸런스 시트
+## 코드와 계산표
 
 | 파일 | 내용 |
 |---|---|
-| [무기 판매 처리](code/weapon-sale.cs) | 판매 결과에 담긴 아이템 ID·레벨을 실제 무기 제거 이벤트로 전달 |
-| [획득 반경 계산](code/magnet-pickup-range.cs) | 기본 획득 반경에 로비 업그레이드 비율을 적용하는 계산 |
-| [상점 진입 판단](code/shop-entry-costs.cs) | 누적 획득 목표와 진입비, 진입 후 남을 골드를 구분하는 계산 |
-| [밸런스 조정안](balance/coin-survivor-balance.xlsx) | 비용·성장·전투 수치와 플레이 측정 양식을 담은 Excel 파일 |
+| [무기 판매 처리](code/weapon-sale.cs) | ID·레벨을 무기 제거 이벤트에 전달 |
+| [획득 반경 계산](code/magnet-pickup-range.cs) | 기본 반경에 로비 업그레이드 배율 적용 |
+| [상점 진입 판단](code/shop-entry-costs.cs) | 누적 획득 목표와 진입비 차감 후 잔액 확인 |
+| [밸런스 조정안](balance/coin-survivor-balance.xlsx) | 비용·성장·전투 수치와 측정 양식 |
 
 ## 플레이 이미지
 
-| 파일 | 내용 |
+| 파일 | 장면 |
 |---|---|
-| [일반 전투 화면](playtest/combat.jpg) | 게임 구성과 전투 화면을 소개하는 2026년 7월 플레이 장면 |
-| [진화 무기 조정 전 화면](playtest/evolved-weapons-before-adjustment.jpg) | 큰 오라와 여러 무기 궤적이 화면을 차지하던 장면 |
+| [일반 전투](playtest/combat.jpg) | 2026년 7월 전투 화면 |
+| [진화 무기 조정 전](playtest/evolved-weapons-before-adjustment.jpg) | 큰 오라와 여러 무기 궤적이 화면을 차지하던 구간 |
 
-일반 전투 이미지는 게임 화면을 소개하기 위해 넣었습니다. 판매 버그의 수정 결과는 당시 확인표에서 볼 수 있습니다.
+일반 전투 사진은 게임 소개용입니다. 판매 버그의 수정 결과는 테스트 기록에서 확인할 수 있습니다.

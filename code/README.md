@@ -1,11 +1,21 @@
-# 관련 코드 발췌
+# 사례에 첨부한 코드
 
-사례를 설명할 때 참고할 수 있도록 Unity C# 코드 세 부분을 가져왔습니다. 각 파일은 원본 클래스에서 발췌한 메서드이며, 단독으로 실행하는 스크립트는 아닙니다.
+Unity C# 원본에서 관련 메서드만 가져왔습니다. 전체 클래스가 아니어서 각 파일을 단독으로 실행할 수는 없습니다.
 
-| 코드 | 연결되는 사례 | 내용 |
+| 코드 | 볼 부분 | 관련 사례 |
 |---|---|---|
-| [무기 판매 처리](weapon-sale.cs) | [판매 후 공격 잔존](../cases/sold-weapon-keeps-attacking.md) | 판매한 아이템의 ID·레벨을 실제 무기 제거 이벤트에 전달 |
-| [획득 반경 계산](magnet-pickup-range.cs) | [자석 체감 개선](../cases/magnet-pickup-range.md)의 계산 참고 | 로비 업그레이드가 획득 반경에 반영되는 계산. 자석 패시브의 전체 수정 내용은 포함하지 않음 |
-| [상점 진입 판단](shop-entry-costs.cs) | [구매·성장 흐름](../cases/shop-and-bag-costs.md) | 진행 목표·진입 비용·진입 후 잔여 골드 확인 |
+| [무기 판매 처리](weapon-sale.cs) | 판매한 무기의 ID·레벨을 제거 이벤트로 전달 | [판매 후에도 남은 공격](../cases/sold-weapon-keeps-attacking.md) |
+| [획득 반경 계산](magnet-pickup-range.cs) | 기본 반경에 로비 업그레이드 배율 적용 | [자석 효과](../cases/magnet-pickup-range.md) |
+| [상점 진입 판단](shop-entry-costs.cs) | 누적 획득 목표와 진입비 차감 후의 잔액 확인 | [구매·확장 비용](../cases/shop-and-bag-costs.md) |
 
-판매 처리는 2026년 10월 1일 `InventoryUiService.cs`에서, 나머지 두 발췌는 9월 30일 `PlayerStatManager.cs`와 `PlayerLevelManager.cs`에서 가져왔습니다. 각 날짜에 가져온 구현의 일부로, 수정 전후를 비교한 자료는 아닙니다.
+획득 반경 파일은 로비 업그레이드 계산 부분입니다. 자석 패시브의 수정 코드 전체를 담고 있지는 않습니다.
+
+## 원본과 발췌일
+
+| 파일 | 원본 클래스 | 가져온 날짜 |
+|---|---|---|
+| 무기 판매 처리 | `InventoryUiService.cs` | 2026-10-01 |
+| 획득 반경 계산 | `PlayerStatManager.cs` | 2026-09-30 |
+| 상점 진입 판단 | `PlayerLevelManager.cs` | 2026-09-30 |
+
+각 날짜에 가져온 구현의 일부이며 수정 전후 비교 파일은 아닙니다.
